@@ -1,0 +1,17 @@
+[project]
+name = "freelance-proposal-cli"
+version = "1.0.0"
+description = "Generate a clean HTML client proposal/quote from a JSON file. Zero dependencies, local file, no cloud account."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+
+[project.scripts]
+freelance-proposal = "proposal:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["proposal"]
