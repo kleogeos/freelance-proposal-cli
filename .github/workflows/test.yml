@@ -1,0 +1,45 @@
+name: Test CLI
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Generate proposal from example.json and verify total
+        run: |
+          python proposal.py example.json -o /tmp/proposal.html
+          grep -q "Total: \$5,100.00" /tmp/proposal.html
+          echo "PASS: total matches expected sum of pricing items"
+      - name: Verify minimal JSON (only required field) renders
+        run: |
+          echo '{"pricing":[{"description":"Work","amount":500}]}' > /tmp/minimal.json
+          python proposal.py /tmp/minimal.json -o /tmp/minimal.html
+          grep -q "Total: \$500.00" /tmp/minimal.html
+          echo "PASS: minimal input with only pricing renders correctly"
+      - name: Verify missing pricing is rejected with clean error
+        run: |
+          set +e
+          echo '{"from":"A"}' > /tmp/nopricing.json
+          python proposal.py /tmp/nopricing.json 2>/tmp/err.txt
+          rc=$?
+          set -e
+          if [ "$rc" -eq 0 ]; then echo "FAIL: missing pricing should exit non-zero"; exit 1; fi
+          grep -q "pricing" /tmp/err.txt || (echo "FAIL: wrong error message" && cat /tmp/err.txt && exit 1)
+          echo "PASS: missing pricing rejected with clean error"
+      - name: Verify invalid JSON is rejected with clean error (not a traceback)
+        run: |
+          set +e
+          echo 'not json' > /tmp/bad.json
+          python proposal.py /tmp/bad.json 2>/tmp/err.txt
+          rc=$?
+          set -e
+          if [ "$rc" -eq 0 ]; then echo "FAIL: invalid JSON should exit non-zero"; exit 1; fi
+          grep -q "Traceback" /tmp/err.txt && (echo "FAIL: raw traceback leaked to user" && cat /tmp/err.txt && exit 1)
+          grep -q "invalid JSON" /tmp/err.txt || (echo "FAIL: wrong error message" && cat /tmp/err.txt && exit 1)
+          echo "PASS: invalid JSON rejected cleanly"
