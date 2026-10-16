@@ -1,5 +1,6 @@
 # freelance-proposal-cli
 
+![Test CLI](https://github.com/kleogeos/freelance-proposal-cli/actions/workflows/test.yml/badge.svg)
 Generate a clean, print-ready HTML client proposal/quote from a JSON file. No dependencies, no sign-up, no SaaS account — just a file you can commit, version, and send as a link or PDF.
 
 ```bash
