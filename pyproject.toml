@@ -5,6 +5,20 @@ description = "Generate a clean HTML client proposal/quote from a JSON file. Zer
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
+authors = [{name = "kleogeos", email = "kleogeos@gmail.com"}]
+keywords = ["freelance", "proposal", "quote", "client", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Other Audience",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial",
+]
+
+[project.urls]
+Homepage = "https://github.com/kleogeos/freelance-proposal-cli"
+Repository = "https://github.com/kleogeos/freelance-proposal-cli"
 
 [project.scripts]
 freelance-proposal = "proposal:main"
