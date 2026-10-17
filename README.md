@@ -38,7 +38,7 @@ Only `pricing` is required; every other field is optional and omitted sections j
 
 ### Where this fits
 
-Proposal gets accepted → track the work with [freelance-time-cli](https://github.com/kleogeos/freelance-time-cli) → log costs with [freelance-expense-cli](https://github.com/kleogeos/freelance-expense-cli) → bill it with [freelance-invoice-cli](https://github.com/kleogeos/freelance-invoice-cli). Same zero-dependency, local-file philosophy across all four.
+Proposal gets accepted → track the work with [freelance-time-cli](https://github.com/kleogeos/freelance-time-cli) → log costs with [freelance-expense-cli](https://github.com/kleogeos/freelance-expense-cli) → turn the hours into an invoice with [freelance-timesheet-to-invoice-cli](https://github.com/kleogeos/freelance-timesheet-to-invoice-cli) → render it with [freelance-invoice-cli](https://github.com/kleogeos/freelance-invoice-cli). Same zero-dependency, local-file philosophy across all five.
 
 Free web tools (no install): [invoice generator](https://kleogeos.github.io/freelancer-tools/invoice.html) · [rate calculator](https://kleogeos.github.io/freelancer-tools/rate-calculator.html) · [contract checklist](https://kleogeos.github.io/freelancer-tools/contract-checklist.html)
 
