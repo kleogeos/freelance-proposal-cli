@@ -42,7 +42,7 @@ Proposal gets accepted → track the work with [freelance-time-cli](https://gith
 
 Free web tools (no install): [invoice generator](https://kleogeos.github.io/freelancer-tools/invoice.html) · [rate calculator](https://kleogeos.github.io/freelancer-tools/rate-calculator.html) · [contract checklist](https://kleogeos.github.io/freelancer-tools/contract-checklist.html)
 
-Need the paperwork beyond this one tool — contracts, invoices, late-payment emails, client scripts? [Freelancer Starter Kit ($15, crypto or Telegram Stars, no KYC)](https://kleogeos.github.io/freelancer-tools/kit.html)
+Need the paperwork beyond this one tool — contracts, invoices, late-payment emails, client scripts? [Freelancer Starter Kit ($15, crypto or Telegram Stars, no KYC)](https://kleogeos.github.io/freelancer-tools/kit.html?src=cli-proposal)
 
 Free and will stay free. If it saved you time: [tip with crypto](https://kleogeos.github.io/freelancer-tools/donate.html).
 
